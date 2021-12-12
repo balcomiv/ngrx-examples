@@ -1,14 +1,7 @@
-import { createAction, props } from '@ngrx/store';
-import { CounterEntity } from './counter.models';
+import { createAction } from '@ngrx/store';
 
-export const init = createAction('[Counter Page] Init');
+export const increment = createAction('[Counter Component] Increment');
 
-export const loadCounterSuccess = createAction(
-  '[Counter/API] Load Counter Success',
-  props<{ counter: CounterEntity[] }>()
-);
+export const decrement = createAction('[Counter Component] Decrement');
 
-export const loadCounterFailure = createAction(
-  '[Counter/API] Load Counter Failure',
-  props<{ error: any }>()
-);
+export const reset = createAction('[Counter Component] Reset');
