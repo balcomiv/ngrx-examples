@@ -106,7 +106,7 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 ## Creating Workspace
 
-`npx create-nx-workspace ngrx-examples --appName ngrx-io --preset angular --style scss --routing --no-interactive`
+`npx create-nx-workspace ngrx-examples --appName ngrx-io --preset angular --style scss --routing --nxCloud false`
 
 ## Adding NGRX
 
