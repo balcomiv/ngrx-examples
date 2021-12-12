@@ -95,6 +95,58 @@
       },
       "tags": []
     },
+    "ngrx-io-counter-data-access": {
+      "projectType": "library",
+      "root": "libs/ngrx-io/counter/data-access",
+      "sourceRoot": "libs/ngrx-io/counter/data-access/src",
+      "prefix": "ngrx-examples",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ngrx-io/counter/data-access"],
+          "options": {
+            "jestConfig": "libs/ngrx-io/counter/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngrx-io/counter/data-access/src/**/*.ts",
+              "libs/ngrx-io/counter/data-access/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "ngrx-io-counter-feature-main": {
+      "projectType": "library",
+      "root": "libs/ngrx-io/counter/feature-main",
+      "sourceRoot": "libs/ngrx-io/counter/feature-main/src",
+      "prefix": "ngrx-examples",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ngrx-io/counter/feature-main"],
+          "options": {
+            "jestConfig": "libs/ngrx-io/counter/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngrx-io/counter/feature-main/src/**/*.ts",
+              "libs/ngrx-io/counter/feature-main/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "ngrx-io-e2e": {
       "root": "apps/ngrx-io-e2e",
       "sourceRoot": "apps/ngrx-io-e2e/src",

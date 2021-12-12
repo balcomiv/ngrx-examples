@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ngrx-examples/ngrx-io/counter/data-access": [
+        "libs/ngrx-io/counter/data-access/src/index.ts"
+      ],
+      "@ngrx-examples/ngrx-io/counter/feature-main": [
+        "libs/ngrx-io/counter/feature-main/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
