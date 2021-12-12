@@ -1,5 +1,3 @@
-
-
 # NgrxExamples
 
 This project was generated using [Nx](https://nx.dev).
@@ -87,19 +85,63 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
+# NgRx Help
 
+- [State Management With NgRx](https://nx.dev/p/a/guides/misc-ngrx)
 
+- [MonoRepo Design Architecture](https://nx.dev/l/r/guides/monorepo-nx-enterprise)
 
+# NgRx Tutorials
 
+- https://brandonroberts.dev/blog/posts/2021-02-24-building-an-angular-application-from-scratch-with-nx-and-ngrx/
 
-## ☁ Nx Cloud
+- https://duncanhunter.gitbook.io/enterprise-angular-applications-with-ngrx-and-nx/introduction/3-generating-components-and-nx-lib
 
-### Distributed Computation Caching & Distributed Task Execution
+# Commands Used
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
+## Kill Process Currently Using Port
 
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
+`netstat -ano | findstr :4200`
+`taskkill /PID 16080 /F`
 
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
+## Creating Workspace
 
-Visit [Nx Cloud](https://nx.app/) to learn more.
+`npx create-nx-workspace ngrx-examples --appName ngrx-io --preset angular --style scss --routing --no-interactive`
+
+## Adding NGRX
+
+`nx g ngrx app --root --no-interactive --module apps/ngrx-io/src/app/app.module.ts`
+
+`ng g @nrwl/angular:ngrx app --root --module=apps/<appname>/src/app/app.module.ts`
+
+## Generating Libraries
+
+`nx g lib ngrx-io/data-access`
+
+`nx g lib ngrx-io/page`
+
+`ng g @nrwl/angular:lib products`
+
+## Moving Libraries
+
+- `nx g move --project booking-some-library shared/some-library`
+
+## Generating Services
+
+`nx g service ngrx-io --project ngrx-io-data-access`
+
+## Generating Components
+
+`nx g component ngrx-io-page --project ngrx-io-page`
+
+## Generating NgRx Feature State
+
+`nx g ngrx ngrx-io --no-interactive --module libs/ngrx-io/data-access/src/lib/examples-data-access.module.ts --barrels`
+
+`ng g ngrx ngrx-io-counter --no-interactive --module libs/ngrx-io/counter/src/lib/ngrx-io-counter.module.ts`
+
+`ng g @nrwl/angular:ngrx products --module=libs/products/src/lib/products.module.ts --directory +state/products --defaults`
+
+### NgRx Tip: To generate an empty feature state, use the feature schematic from the @ngrx/schematics package.
+
+`nx g @ngrx/schematics:feature quote`
