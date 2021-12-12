@@ -91,6 +91,8 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 - [MonoRepo Design Architecture](https://nx.dev/l/r/guides/monorepo-nx-enterprise)
 
+- [Grouping Libraries](https://nx.dev/l/r/structure/grouping-libraries)
+
 # NgRx Tutorials
 
 - https://brandonroberts.dev/blog/posts/2021-02-24-building-an-angular-application-from-scratch-with-nx-and-ngrx/
@@ -138,9 +140,11 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 `nx g ngrx ngrx-io --no-interactive --module libs/ngrx-io/data-access/src/lib/examples-data-access.module.ts --barrels`
 
-`ng g ngrx ngrx-io-counter --no-interactive --module libs/ngrx-io/counter/src/lib/ngrx-io-counter.module.ts`
+`ng g ngrx counter --no-interactive --module libs/ngrx-io/counter/data-access/src/lib/ngrx-io-counter-data-access.module.ts`
 
 `ng g @nrwl/angular:ngrx products --module=libs/products/src/lib/products.module.ts --directory +state/products --defaults`
+
+` npx nx g @ngrx/schematics:feature --name=counter --project=ngrx-io-counter-data-access --module=ngrx-io-counter-data-access --no-interactive --dry-run`
 
 ### NgRx Tip: To generate an empty feature state, use the feature schematic from the @ngrx/schematics package.
 
