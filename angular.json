@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "projects": {
+    "ngrx-io": {
+      "projectType": "application",
+      "root": "apps/ngrx-io",
+      "sourceRoot": "apps/ngrx-io/src",
+      "prefix": "ngrx-examples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/ngrx-io",
+            "index": "apps/ngrx-io/src/index.html",
+            "main": "apps/ngrx-io/src/main.ts",
+            "polyfills": "apps/ngrx-io/src/polyfills.ts",
+            "tsConfig": "apps/ngrx-io/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/ngrx-io/src/favicon.ico",
+              "apps/ngrx-io/src/assets"
+            ],
+            "styles": ["apps/ngrx-io/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngrx-io/src/environments/environment.ts",
+                  "with": "apps/ngrx-io/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ngrx-io:build:production"
+            },
+            "development": {
+              "browserTarget": "ngrx-io:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngrx-io:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ngrx-io/src/**/*.ts",
+              "apps/ngrx-io/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ngrx-io"],
+          "options": {
+            "jestConfig": "apps/ngrx-io/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "ngrx-io-e2e": {
+      "root": "apps/ngrx-io-e2e",
+      "sourceRoot": "apps/ngrx-io-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ngrx-io-e2e/cypress.json",
+            "devServerTarget": "ngrx-io:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngrx-io:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/ngrx-io-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["ngrx-io"]
+    }
+  }
+}
