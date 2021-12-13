@@ -95,6 +95,58 @@
       },
       "tags": []
     },
+    "ngrx-io-book-list-data-access": {
+      "projectType": "library",
+      "root": "libs/ngrx-io/book-list/data-access",
+      "sourceRoot": "libs/ngrx-io/book-list/data-access/src",
+      "prefix": "ngrx-examples",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ngrx-io/book-list/data-access"],
+          "options": {
+            "jestConfig": "libs/ngrx-io/book-list/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngrx-io/book-list/data-access/src/**/*.ts",
+              "libs/ngrx-io/book-list/data-access/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "ngrx-io-book-list-feature-main": {
+      "projectType": "library",
+      "root": "libs/ngrx-io/book-list/feature-main",
+      "sourceRoot": "libs/ngrx-io/book-list/feature-main/src",
+      "prefix": "ngrx-examples",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ngrx-io/book-list/feature-main"],
+          "options": {
+            "jestConfig": "libs/ngrx-io/book-list/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngrx-io/book-list/feature-main/src/**/*.ts",
+              "libs/ngrx-io/book-list/feature-main/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "ngrx-io-counter-data-access": {
       "projectType": "library",
       "root": "libs/ngrx-io/counter/data-access",

@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ngrx-examples/ngrx-io/book-list/data-access": [
+        "libs/ngrx-io/book-list/data-access/src/index.ts"
+      ],
+      "@ngrx-examples/ngrx-io/book-list/feature-main": [
+        "libs/ngrx-io/book-list/feature-main/src/index.ts"
+      ],
       "@ngrx-examples/ngrx-io/counter/data-access": [
         "libs/ngrx-io/counter/data-access/src/index.ts"
       ],

@@ -116,11 +116,15 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 `ng g @nrwl/angular:ngrx app --root --module=apps/<appname>/src/app/app.module.ts`
 
+## Generating Applications
+
+``
+
 ## Generating Libraries
 
-`nx g lib ngrx-io/data-access`
+`nx g lib ngrx-io/counter/data-access`
 
-`nx g lib ngrx-io/page`
+`nx g lib ngrx-io/counter/feature-main`
 
 `ng g @nrwl/angular:lib products`
 
@@ -145,6 +149,8 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 `ng g @nrwl/angular:ngrx products --module=libs/products/src/lib/products.module.ts --directory +state/products --defaults`
 
 ` npx nx g @ngrx/schematics:feature --name=counter --project=ngrx-io-counter-data-access --module=ngrx-io-counter-data-access --no-interactive --dry-run`
+
+`ng g ngrx --name book-list --no-interactive --project ngrx-io-book-list-data-access --module ngrx-io-book-list-data-access.module.ts`
 
 ### NgRx Tip: To generate an empty feature state, use the feature schematic from the @ngrx/schematics package.
 
