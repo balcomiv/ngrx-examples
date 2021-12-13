@@ -3,15 +3,26 @@ import * as CounterActions from './counter.actions';
 
 export const COUNTER_FEATURE_KEY = 'counter';
 
-const initialState = 0;
+export interface State {
+  counter: number;
+}
+
+const initialState: State = {
+  counter: 0,
+};
 
 const counterReducer = createReducer(
   initialState,
-  on(CounterActions.increment, (state) => state + 1),
-  on(CounterActions.decrement, (state) => state - 1),
-  on(CounterActions.reset, () => 0)
+  on(CounterActions.increment, (state) => {
+    return { ...state, counter: state.counter + 1 };
+  }),
+  on(CounterActions.decrement, (state) => ({
+    ...state,
+    counter: state.counter - 1,
+  })),
+  on(CounterActions.reset, (state) => ({ ...state, counter: 0 }))
 );
 
-export function reducer(state: number, action: Action) {
+export function reducer(state: State, action: Action) {
   return counterReducer(state, action);
 }

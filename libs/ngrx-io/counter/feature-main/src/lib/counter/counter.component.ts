@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { getCounterState } from '../../../../data-access/src';
 import * as CounterActions from '../../../../data-access/src/lib/+state/counter.actions';
 @Component({
@@ -12,18 +12,20 @@ export class CounterComponent {
   count$: Observable<number>;
 
   constructor(private store: Store) {
-    this.count$ = this.store.select(getCounterState);
+    this.count$ = this.store
+      .select(getCounterState)
+      .pipe(map((x) => x.counter));
   }
 
-  increment() {
+  onIncrement() {
     this.store.dispatch(CounterActions.increment());
   }
 
-  decrement() {
+  onDecrement() {
     this.store.dispatch(CounterActions.decrement());
   }
 
-  reset() {
+  onReset() {
     this.store.dispatch(CounterActions.reset());
   }
 }
