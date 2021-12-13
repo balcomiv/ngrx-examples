@@ -150,7 +150,7 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 ` npx nx g @ngrx/schematics:feature --name=counter --project=ngrx-io-counter-data-access --module=ngrx-io-counter-data-access --no-interactive --dry-run`
 
-`ng g ngrx --name book-list --no-interactive --project ngrx-io-book-list-data-access --module ngrx-io-book-list-data-access.module.ts`
+`ng g ngrx --name book-list --no-interactive --module libs/ngrx-io/book-list/data-access/src/lib/ngrx-io-book-list-data-access.module.ts`
 
 ### NgRx Tip: To generate an empty feature state, use the feature schematic from the @ngrx/schematics package.
 
