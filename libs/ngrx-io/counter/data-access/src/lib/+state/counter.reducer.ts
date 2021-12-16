@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import * as CounterActions from './counter.actions';
 
 export const COUNTER_FEATURE_KEY = 'counter';
@@ -11,7 +11,7 @@ const initialState: State = {
   counter: 0,
 };
 
-const counterReducer = createReducer(
+export const counterReducer = createReducer(
   initialState,
   on(CounterActions.increment, (state) => {
     return { ...state, counter: state.counter + 1 };
@@ -23,6 +23,6 @@ const counterReducer = createReducer(
   on(CounterActions.reset, (state) => ({ ...state, counter: 0 }))
 );
 
-export function reducer(state: State, action: Action) {
-  return counterReducer(state, action);
-}
+// export function reducer(state: State, action: Action) {
+//   return counterReducer(state, action);
+// }

@@ -10,7 +10,7 @@ import * as fromCounter from './+state/counter.reducer';
     CommonModule,
     StoreModule.forFeature(
       fromCounter.COUNTER_FEATURE_KEY,
-      fromCounter.reducer
+      fromCounter.counterReducer
     ),
     EffectsModule.forFeature([CounterEffects]),
   ],
